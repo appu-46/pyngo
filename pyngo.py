@@ -152,27 +152,27 @@ def gameProgress(l1,l2):
 	global strike_for_player1
 	global strike_for_player2
 
-	#yeilding list of horizontals for player 1 :
+	#yielding list of horizontals for player 1 :
 	horizontal_list1 = []
 	x = 0 
 	for i in range(5):
 		horizontal_list1.append(l1[x:x+5])
 		x += 5
 
-	#yeilding horizontal results for player 2:
+	#yielding horizontal results for player 2:
 	horizontal_list2 = []
 	x = 0 
 	for i in range(5):
 		horizontal_list2.append(l2[x:x+5])
 		x += 5 
 
-	#yeilding vertical results for player 1:
+	#yielding vertical results for player 1:
 	vertical_list1 = []
 	x = 0
 	for i in range(5):
 		vertical_list1.append([l1[x],l1[x+5],l1[x+10],l1[x+15],l1[x+20]])
 		x += 1
-	# yeilding vertical results for player 2
+	# yielding vertical results for player 2
 	vertical_list2 = []
 	x = 0
 	for i in range(5):
