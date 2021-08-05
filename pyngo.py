@@ -273,30 +273,48 @@ def gameOver():
 
 	if strike_for_player1 == 1:
 		bingo1[0] = 'X'
-	if strike_for_player1 == 2 and bingo1[0] == 'X':
+	if strike_for_player1 == 2:
+		bingo1 [0] = 'X' 
 		bingo1[1] = 'X'
-	if strike_for_player1 == 3 and bingo1[1] == 'X':
+	if strike_for_player1 == 3:
+		bingo1 [0] = 'X' 
+		bingo1[1] = 'X'
 		bingo1[2] = 'X'
-	if strike_for_player1 == 4 and bingo1[2] == 'X':
+	if strike_for_player1 == 4:
+		bingo1 [0] = 'X' 
+		bingo1[1] = 'X'
+		bingo1[2] = 'X'
 		bingo1[3] = 'X'
 	if strike_for_player1 == 5:
+		bingo1 [0] = 'X' 
+		bingo1[1] = 'X'
+		bingo1[2] = 'X'
+		bingo1[3] = 'X'
 		bingo1[4] = 'X'
 
 		quit(f"{player1} has won!!!. Thank you for playing BINGO.")
 
 	if strike_for_player2 == 1:
 		bingo2[0] = 'X'
-	if strike_for_player2 == 2 and bingo2[0] == 'X':
+	if strike_for_player2 == 2:
+		bingo2[0] = 'X'
 		bingo2[1] = 'X'
-	if strike_for_player2 == 3 and bingo2[1] == 'X':
+	if strike_for_player2 == 3:
+		bingo2[0] = 'X'
+		bingo2[1] = 'X'
 		bingo2[2] = 'X'
-	if strike_for_player2 == 4 and bingo2[2] == 'X':
+	if strike_for_player2 == 4:
+		bingo2[0] = 'X'
+		bingo2[1] = 'X'
+		bingo2[2] = 'X'
 		bingo2[3] = 'X'
 	if strike_for_player2 == 5:
+		bingo2[0] = 'X'
+		bingo2[1] = 'X'
+		bingo2[2] = 'X'
+		bingo2[3] = 'X'
 		bingo2[4] = 'X'
 		quit(f"{player2} has won!!!. Thank you for playing BINGO")
-
-
 
 def printBoard(l1,l2):
 
