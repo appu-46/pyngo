@@ -121,7 +121,7 @@ def theGame(l1,l2):
 			if l2[i] == str(strike).rjust(2,'0'):
 				l2[i] = ' X'
 		p2_nums = l2
-
+		gameOver()
 		gameProgress(p1_nums, p2_nums)
 
 		#asking number from player 2 and striking on both boards:
@@ -149,9 +149,6 @@ def theGame(l1,l2):
 		p2_nums = l2
 
 		gameOver()
-
-
-		printBoard(p1_nums, p2_nums)
 		
 		gameProgress(p1_nums, p2_nums)
 
@@ -161,27 +158,27 @@ def gameProgress(l1,l2):
 	global strike_for_player1
 	global strike_for_player2
 
-	#yielding list of horizontals for player 1 :
+	#yeilding list of horizontals for player 1 :
 	horizontal_list1 = []
 	x = 0 
 	for i in range(5):
 		horizontal_list1.append(l1[x:x+5])
 		x += 5
 
-	#yielding horizontal results for player 2:
+	#yeilding horizontal results for player 2:
 	horizontal_list2 = []
 	x = 0 
 	for i in range(5):
 		horizontal_list2.append(l2[x:x+5])
 		x += 5 
 
-	#yielding vertical results for player 1:
+	#yeilding vertical results for player 1:
 	vertical_list1 = []
 	x = 0
 	for i in range(5):
 		vertical_list1.append([l1[x],l1[x+5],l1[x+10],l1[x+15],l1[x+20]])
 		x += 1
-	# yielding vertical results for player 2
+	# yeilding vertical results for player 2
 	vertical_list2 = []
 	x = 0
 	for i in range(5):
@@ -194,7 +191,7 @@ def gameProgress(l1,l2):
 		if result_for_horizontal1[i] == False:
 			result_for_horizontal1[i] = all([k == ' X' for k in horizontal_list1[i]])
 			if result_for_horizontal1[i] == True:
-				horizontal_list1[i] = []
+				horizontal_list1[i] = ['69']
 				strike_for_player1+=1
 				
 
@@ -204,7 +201,7 @@ def gameProgress(l1,l2):
 		if result_for_vertical1[i] == False:
 			result_for_vertical1[i] = all([k == ' X' for k in vertical_list1[i]])
 			if result_for_vertical1[i] == True:
-				vertical_list1[i] = []
+				vertical_list1[i] = ['69']
 				strike_for_player1+=1
 
 	#checking for all horizontal strikethrough of game for player 2:
@@ -214,7 +211,7 @@ def gameProgress(l1,l2):
 			result_for_horizontal2[i] = all([k == ' X' for k in horizontal_list2[i]])
 
 			if result_for_horizontal2[i] == True:
-				horizontal_list2[i] = []
+				horizontal_list2[i] = ['69']
 				strike_for_player2+=1
 
 			
@@ -226,7 +223,7 @@ def gameProgress(l1,l2):
 			result_for_vertical2[i] = all([k == ' X' for k in vertical_list2[i]])
 			x+=1
 			if result_for_vertical2[i] == True:
-				vertical_list2[i] = []
+				vertical_list2[i] = ['69']
 				strike_for_player2+=1
 
 	#checking for 1st diagonal strikethrough of game for player 1:
@@ -269,7 +266,7 @@ def gameOver():
 	global strike_for_player2
 	#crossing bingo for plater 1:
 
-	print(f"Strike for player 1 = {strike_for_player1}, Strike for player 2 = {strike_for_player2}")
+	#print(f"Strike for player 1 = {strike_for_player1}, Strike for player 2 = {strike_for_player2}")
 
 	if strike_for_player1 == 1:
 		bingo1[0] = 'X'
@@ -315,6 +312,8 @@ def gameOver():
 		bingo2[3] = 'X'
 		bingo2[4] = 'X'
 		quit(f"{player2} has won!!!. Thank you for playing BINGO")
+
+
 
 def printBoard(l1,l2):
 
