@@ -94,7 +94,7 @@ def customBoard(l1,l2):
 
 def theGame(l1,l2):
 	game_round = 1
-	
+	crossed_nums = []
 	while True:
 		print(f"Round {game_round} begins:")
 		#asking number from player 1 and striking on both boards:
@@ -102,9 +102,14 @@ def theGame(l1,l2):
 			strike = int(input(f"\n{player1} may enter a number.To end the game, enter any word."))
 		except ValueError:
 			quit(f"{player1} ended the game. Thank you for playing BINGO")
+		
 
 		if strike not in range(1,26):
 			print("Please enter a number between 1 to 25.")
+		elif strike in crossed_nums:
+			print(f"This number has already been taken {player1}. Please enter another number.")
+			continue
+		crossed_nums.append(strike)
 			
 
 		for i in range(25):
@@ -124,10 +129,14 @@ def theGame(l1,l2):
 			strike = int(input(f"\n{player2} may enter a number.To end the game, enter any word."))
 		except ValueError:
 			quit(f"{player2} ended the game. Thank you for playing BINGO")
+		
 
 		if strike not in range(1,26):
 			print("Please enter a number between 1 to 25.")
+		elif strike in crossed_nums:
+			print(f"This number has already been taken {player2}. Please enter another number.")
 			continue
+		crossed_nums.append(strike)
 
 		for i in range(25):
 			if l1[i] == str(strike).rjust(2,'0'):
